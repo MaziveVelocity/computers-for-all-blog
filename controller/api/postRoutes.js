@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Post, Comment, User } = require('../../model')
+const { Post, Comment, User } = require('../../model');
+const withAuth = require('../../utils/auth');
 
 //--------GET-------//
 router.get('/', (req, res) => {
@@ -27,7 +28,6 @@ router.get('/', (req, res) => {
     }).then(dbData => {
         res.json(dbData)
     }).catch(err => {
-        console.log(err);
         res.status(500).json(err);
     });
 });
@@ -60,13 +60,12 @@ router.get('/:id', (req, res) => {
     }).then(dbData => {
         res.json(dbData)
     }).catch(err => {
-        console.log(err);
         res.status(500).json(err);
     });
 });
 
 //--------POST-------//
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Post.create({
         post_title: req.body.post_title,
         post_body: req.body.post_body,
@@ -74,13 +73,12 @@ router.post('/', (req, res) => {
     }).then(dbData => {
         res.json(dbData)
     }).catch(err => {
-        console.log(err);
         res.status(500).json(err);
     });
 });
 
 //--------PUT-------//
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth,(req, res) => {
     Post.update(
         {
             post_title: req.body.post_title,
@@ -98,13 +96,12 @@ router.put('/:id', (req, res) => {
         }
         res.json({ message: 'update success', data: dbData });
     }).catch(err => {
-        console.log(err);
         res.status(500).json(err);
     });
 });
 
 //--------DELETE-------//
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth,(req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
@@ -116,7 +113,6 @@ router.delete('/:id', (req, res) => {
         }
         res.json({ message: 'post successfully deleted', data: dbData });
     }).catch(err => {
-        console.log(err);
         res.status(500).json(err);
     });
 });
