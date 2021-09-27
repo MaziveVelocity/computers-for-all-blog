@@ -2,14 +2,11 @@
 
 {{!-- {{#if loggedIn}} --}}
 <div class="post">
-    <div class="mb-3">
-        <label for="post_title" class="form-label">Title</label>
-        <input type="email" class="form-control" id="post_title" placeholder="Title">
-    </div>
-    <div class="mb-3">
-        <label for="post_body" class="form-label">post</label>
-        <textarea class="form-control" id="post_body" rows="3"></textarea>
-    </div>
+    <form class="mb-3">
+        <label for="post_body" class="form-label">comment</label>
+        <textarea class="form-control" id="post_body" rows="3" placeholder="Enter Comment"></textarea>
+        <button type="submit">Submit</button>
+    </form>
 </div>
 {{!-- {{/if}} --}}
 

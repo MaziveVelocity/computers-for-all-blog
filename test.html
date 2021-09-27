@@ -10,21 +10,40 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="d-flex">
-            <nav class="nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Dashboard</a>
-            </nav>
-        </div>
+    <article>
+        <a href="/dashboard"> &larr; Back to dashboard</a>
+        <h2>
+            Edit Post
+        </h2>
+        <form class="post">
+            <div class="mb-3">
+                <label for="post_title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="post_title" value="{{post.post_title}}">
+            </div>
+            <div class="mb-3">
+                <label for="post_body" class="form-label">Post</label>
+                <textarea class="form-control" id="post_body" rows="3">{{post.post_body}}</textarea>
+                <a href="/post/{{post.id}}">{{format_plural "comment" post.comments.length}}</a>
+            </div>
+            <button type="submit">Edit</button>
+        </form>
+    </article>
+    
+    <form class="comment-form">
         <div>
-            <button>Logout</button>
-            <button>Login</button>
+            <textarea name="comment-body"></textarea>
         </div>
-    </div>
-    <div>
-        <h1>Compuers For All</h1>
-    </div>
+    
+        <div>
+            <button type="submit">add comment</button>
+        </div>
+    </form>
+    
+    {{> comments post.comments}}
+    
+    <script src="/javascript/edit-post.js"></script>
+    <script src="/javascript/delete-post.js"></script>
+    <script src="/javascript/comment.js"></script>
 </body>
 
 </html>
