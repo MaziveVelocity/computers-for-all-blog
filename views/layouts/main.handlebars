@@ -19,17 +19,22 @@
             <div class="d-flex">
                 <nav class="nav">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    {{#if loggedIn}}
-                    <a class="nav-link" href="#">Dashboard</a>
-                    {{/if}}
+                    {{!-- {{#if loggedIn}} --}}
+                    <a class="nav-link" href="">Dashboard</a>
+                    {{!-- {{/if}} --}}
                 </nav>
             </div>
             <div>
-                {{#if loggedIn}}
+                {{!-- {{#if loggedIn}} --}}
                 <button>Logout</button>
-                {{else}}
-                <button>Login</button>
-                {{/if}}
+                {{!-- {{else}} --}}
+                <a href="/signup">
+                    <button>Sign up</button>
+                </a>
+                <a href="/login">
+                    <button>Login</button>
+                </a>
+                {{!-- {{/if}} --}}
             </div>
         </div>
         <div>

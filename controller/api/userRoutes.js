@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const session = require('express-session');
 const { User, Post, Comment } = require('../../model/');
 
 // ----------GET----------//
@@ -55,7 +56,8 @@ router.post('/login', (req, res) => {
             req.session.username = dbData.username;
             req.session.loggedIn = true;
 
-            res.json({ user: dbData, message: 'You are now logged in!' });
+            const loggedIn = req.session.loggedIn;
+            res.json({ user: dbData, message: 'You are now logged in!' , loggedIn: loggedIn});
         });
     });
 });
