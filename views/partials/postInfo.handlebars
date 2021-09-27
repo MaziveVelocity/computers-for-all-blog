@@ -6,4 +6,7 @@
         <p class="card-body"> {{post_body}}</p>
         {{user.username}} on {{format_date created_at}}
     </div>
+    <div class="card-footer">
+        <p>{{comments.length}} {{format_plural "comment" comments.length}}</p>  
+    </div>
 </div>

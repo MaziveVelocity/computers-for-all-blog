@@ -1,7 +1,10 @@
 <ol class="post-list">
   {{#each posts as |post|}}
-  <li>
-    {{> postInfo post }}
-  </li>
+  <a href="/post/{{post.id}}">
+    <li>
+      {{> postInfo post }}
+    </li>
+  </a>
   {{/each}}
 </ol>
+<script src="./js/hompage.js"></script>

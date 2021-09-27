@@ -1,17 +1,17 @@
 {{>postInfo post}}
 
-{{!-- {{#if loggedIn}} --}}
-<div class="post">
+{{#if loggedIn}}
+<div class="comment-form">
     <form class="mb-3">
-        <label for="post_body" class="form-label">comment</label>
-        <textarea class="form-control" id="post_body" rows="3" placeholder="Enter Comment"></textarea>
-        <button type="submit">Submit</button>
+        <label for="comment_text" class="form-label">comment</label>
+        <textarea class="form-control" id="comment_text" rows="3" placeholder="Enter Comment"></textarea>
+        <button type="submit">Comment</button>
     </form>
 </div>
-{{!-- {{/if}} --}}
+{{/if}}
 
 {{> comments post.comments}}
 
-{{!-- {{#if loggedIn}} --}}
-<script src="/javascript/comment.js"></script>
-{{!-- {{/if}} --}}
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}

@@ -1,29 +1,37 @@
 <section>
     <h2>Create New Post</h2>
-    <form class="post">
+    <form class="post-form">
         <div class="mb-3">
             <label for="post_title" class="form-label">Title</label>
-            <input type="email" class="form-control" id="post_title" placeholder="Title">
+            <input type="text" class="form-control" id="post_title" placeholder="Title">
         </div>
         <div class="mb-3">
             <label for="post_body" class="form-label">Post</label>
             <textarea class="form-control" id="post_body" rows="3"></textarea>
         </div>
+        <button type="submit">Add Post</button>
     </form>
 </section>
 
-{{!-- {{#if posts.length}} --}}
+{{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
     <ol>
         {{#each posts as |post|}}
-        <li>
-            {{> postInfo post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-        </li>
+        <a href="/post/{{post.id}}">
+            <li>
+                {{> postInfo post }}
+                <span>
+                    <a href="/dashboard/edit/{{post.id}}" class="edit-link">
+                        <button>Edit post</button>
+                    </a>
+                    <button id="delete">Delete</button>
+                </span>
+            </li>
+        </a>
         {{/each}}
     </ol>
 </section>
-{{!-- {{/if}} --}}
+{{/if}}
 
-<script src="/javascript/add-post.js"></script>
+<script src="/js/dashboard.js"></script>

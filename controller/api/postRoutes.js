@@ -66,10 +66,11 @@ router.get('/:id', (req, res) => {
 
 //--------POST-------//
 router.post('/', withAuth, (req, res) => {
+    console.log(req.body);
     Post.create({
         post_title: req.body.post_title,
         post_body: req.body.post_body,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     }).then(dbData => {
         res.json(dbData)
     }).catch(err => {

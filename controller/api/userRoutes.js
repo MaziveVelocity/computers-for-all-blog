@@ -40,6 +40,7 @@ router.post('/login', (req, res) => {
         }
     }).then(dbData => {
         if (!dbData) {
+            console.log('no username')
             res.status(400).json({ message: 'Incorrect Username or Password' });
             return;
         }
@@ -47,6 +48,7 @@ router.post('/login', (req, res) => {
         const validPassword = dbData.checkPassword(req.body.password);
 
         if (!validPassword) {
+            console.log('wrong password');
             res.status(400).json({ message: 'Incorrect Username or Password' });
             return;
         }
