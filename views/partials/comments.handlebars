@@ -4,6 +4,14 @@
         <p class="card-body">{{comment_text}}</p>
         <div class="card-footer">
             {{user.username}} on {{format_date created_at}}
+            {{#if isLoggedIn}}
+            <div>
+                <span>
+                    <button>Delete</button>
+                    <button>Update</button>
+                </span>
+            </div>
+            {{/if}}
         </div>
     </div>
     {{/each}}

@@ -21,3 +21,16 @@ async function newPostHandler(event) {
 }
 
 document.querySelector('.post-form').addEventListener('submit', newPostHandler);
+
+async function deletePostHandler(event){
+    event.preventDefault();
+
+    const deleteBtn = $(this).data('id');
+    const response = await fetch(`api/post/${deleteBtn}`, {
+        method: 'DELETE'
+    });
+    console.log(response);
+    document.location.reload();
+}
+
+$('.delete').on('click', deletePostHandler);

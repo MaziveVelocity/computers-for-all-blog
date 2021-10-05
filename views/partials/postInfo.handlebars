@@ -1,12 +1,12 @@
 <div class="card" style="width: 18rem;">
-    <div class="card-header">
+    <div class="post-header">
         {{post_title}}
     </div>
-    <div class="card-body">
+    <div class="body">
         <p class="card-body"> {{post_body}}</p>
         {{user.username}} on {{format_date created_at}}
     </div>
-    <div class="card-footer">
+    <div class="footer">
         <p>{{comments.length}} {{format_plural "comment" comments.length}}</p>  
     </div>
 </div>
