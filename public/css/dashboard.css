@@ -1,0 +1,11 @@
+.post-wrapper{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 450px;
+    background-color: white;
+    padding: 50px 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    text-align: center;
+}
