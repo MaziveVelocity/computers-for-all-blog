@@ -11,7 +11,7 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     {{!-- font-family: 'Cabin', sans-serif; --}}
     <title>Computers For All</title>
 </head>
@@ -20,7 +20,7 @@
     <div>
         <div class="header">
             <div class="navbar">
-                <div class="d-flex">
+                <div>
                     <nav class="nav">
                         <a href="/">
                             <button>Home</button>
@@ -46,14 +46,16 @@
                 </div>
             </div>
             <div>
-                <h1>Compuers For All</h1>
+                <h1>Computers For All</h1>
             </div>
         </div>
         <main class="wrapper">
-            {{{body}}}
+                {{{body}}}
         </main>
         <footer>
-            Thanks for Visiting
+            <div>
+                Thanks for Visiting
+            </div>
         </footer>
     </div>
     {{#if loggedIn}}

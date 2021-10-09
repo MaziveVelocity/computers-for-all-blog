@@ -1,30 +1,33 @@
-<article>
-    <a href="/dashboard"> &larr; Back to dashboard</a>
-    <h2>
-        Edit Post
-    </h2>
-    <form class="edit-form">
-        <div class="mb-3">
-            <label for="post_title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="post_title" value="{{post.post_title}}">
-        </div>
-        <div class="mb-3">
-            <label for="post_body" class="form-label">Post</label>
-            <textarea class="form-control" id="post_body" rows="3">{{post.post_body}}</textarea>
-        </div>
-        <button type="submit">Submit Edit</button>
-    </form>
-</article>
+<link rel="stylesheet" href="/css/edit.css">
+<div class="edit-con">
+    <article class="con">
+        <a href="/dashboard"> &larr; Back to dashboard</a>
+        <h2>
+            Edit Post
+        </h2>
+        <form class="edit-form con">
+            <div class="mb-3">
+                <label for="post_title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="post_title" value="{{post.post_title}}">
+            </div>
+            <div class="mb-3">
+                <label for="post_body" class="form-label">Post</label>
+                <textarea class="form-control" id="post_body" rows="3">{{post.post_body}}</textarea>
+            </div>
+            <button type="submit">Submit Edit</button>
+        </form>
+    </article>
 
-<form class="comment-form">
-     <form class="mb-3">
-        <label for="post_body" class="form-label">comment</label>
-        <textarea class="form-control" id="post_body" rows="3" placeholder="Enter Comment"></textarea>
-        <button type="submit">Comment</button>
+    <form class="comment-form con">
+        <form class="mb-3">
+            <label for="post_body" class="form-label">comment</label>
+            <textarea class="form-control" id="post_body" rows="3" placeholder="Enter Comment"></textarea>
+            <button type="submit">Comment</button>
+        </form>
     </form>
-</form>
 
-{{> comments post.comments}}
+    {{> comments post.comments}}
+</div>
 
 <script src="/js/edit.js"></script>
 <script src="/js/comment.js"></script>

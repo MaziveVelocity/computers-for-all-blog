@@ -1,27 +1,32 @@
-:root{
+:root {
     --primary: rgb(28, 27, 114);
 }
 
-*{
+* {
     font-family: 'Cabin', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
+    color: black;
 }
 
-ol{
+a:hover{
+    color: black;
+}
+
+ol {
     list-style: none;
 }
 
-body{
-    background-image: linear-gradient( to bottom right, var(--primary) , rgb(31, 40, 168));
+body {
+    background-image: linear-gradient( to bottom right, var(--primary), rgb(31, 40, 168));
 }
 
-button{
+button {
     border-color: var(--primary);
     background-color: rgba(0, 0, 0, 0);
     padding: 10px;
@@ -30,29 +35,42 @@ button{
     border-radius: 16px;
 }
 
-button:hover{
+button:hover {
     background-color: var(--primary);
     color: white;
 }
 
-.header{
+footer{
+    display: flex;
+    background-color: rgb(219, 219, 219);
+    height: 37px;
+    justify-content: center;
+}
+
+.header {
     /* position: fixed; */
     width: 100%;
     /* top: 0;
     z-index: 999; */
     /* height: 100px; */
     background-color: rgb(219, 219, 219);
-    
 }
 
-.wrapper{
+.wrapper {
     /* margin-top: 300px; */
+    padding: 30px;
+    min-height: 80vh;
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
-    height: 100vh;
+    /* height: 100vh; */
+    /* max-width: 80%; */
 }
 
-.post-con{
-    color: orange;
+.nav{
+    display: flex;
+    flex-flow: row;
+}
+
+.title{
+    border-bottom: gray;
 }

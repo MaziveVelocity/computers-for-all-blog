@@ -1,0 +1,18 @@
+.post{
+    margin: 15px;
+    background-color: white;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+a{
+    width: 100%;
+}
+
+ol{
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+    align-items: center;
+}

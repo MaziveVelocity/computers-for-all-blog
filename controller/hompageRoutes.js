@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-    Post.findByPk(req.params.id,{
+    Post.findByPk(req.params.id, {
         attributes: [
             'id',
             'post_title',
@@ -59,24 +59,22 @@ router.get('/post/:id', (req, res) => {
                 attributes: ['username']
             }
         ]
-    })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
-                return;
-            }
+    }).then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
 
-            const post = dbPostData.get({ plain: true });
-            console.log(post)
+        const post = dbPostData.get({ plain: true });
+        console.log(post)
 
-            res.render('post', {
-                post,
-                loggedIn: req.session.loggedIn
-            });
-        })
-        .catch(err => {
-            res.status(500).json(err);
+        res.render('post', {
+            post,
+            loggedIn: req.session.loggedIn
         });
+    }).catch(err => {
+        res.status(500).json(err);
+    });
 });
 
 router.get('/login', (req, res) => {

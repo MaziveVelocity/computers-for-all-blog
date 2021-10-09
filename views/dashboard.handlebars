@@ -1,38 +1,43 @@
-<link rel="stylesheet" href="./css/dashboard.css">
-<section class="post-wrapper">
-    <h2>Create New Post</h2>
-    <form class="post-form">
-        <div class="mb-3">
-            <label for="post_title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="post_title" placeholder="Title">
+<link rel="stylesheet" href="/css/dashboard.css">
+<div>
+    <section class="post-wrapper">
+        <div class="title">
+            <h2>Create New Post</h2>
         </div>
-        <div class="mb-3">
-            <label for="post_body" class="form-label">Post</label>
-            <textarea class="form-control" id="post_body" rows="3"></textarea>
+        <form class="post-form">
+            <div class="mb-3">
+                <label for="post_title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="post_title" placeholder="Title">
+            </div>
+            <div class="mb-3">
+                <label for="post_body" class="form-label">Post</label>
+                <textarea class="form-control" id="post_body" rows="3"></textarea>
+            </div>
+            <button type="submit">Add Post</button>
+        </form>
+    </section>
+
+    {{#if posts.length}}
+    <section class="post-wrapper">
+        <div class="title">
+            <h2>Your Posts</h2>
         </div>
-        <button type="submit">Add Post</button>
-    </form>
-</section>
-
-{{#if posts.length}}
-<section class="post-wrapper">
-    <h2>Your Posts</h2>
-    <ol class="post-con">
-        {{#each posts as |post|}}
-        <a href="/post/{{post.id}}">
-            <li>
-                {{> postInfo post }}
-                <span>
-                    <a href="/dashboard/edit/{{post.id}}" class="edit-link">
-                        <button>Edit post</button>
-                    </a>
-                    <button class="delete" data-id="{{post.id}}">Delete</button>
-                </span>
-            </li>
-        </a>
-        {{/each}}
-    </ol>
-</section>
-{{/if}}
-
+        <ol class="post-con">
+            {{#each posts as |post|}}
+            <a href="/post/{{post.id}}">
+                <li>
+                    {{> postInfo post }}
+                    <span>
+                        <a href="/dashboard/edit/{{post.id}}" class="edit-link">
+                            <button>Edit post</button>
+                        </a>
+                        <button class="delete" data-id="{{post.id}}">Delete</button>
+                    </span>
+                </li>
+            </a>
+            {{/each}}
+        </ol>
+    </section>
+    {{/if}}
+</div>
 <script src="/js/dashboard.js"></script>

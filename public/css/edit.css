@@ -1,0 +1,13 @@
+.con{
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px 0px;
+    padding: 15px;
+    width: 100%;
+}
+
+.edit-con{
+    display: flex;
+    flex-flow: column;
+    width: 35%;
+}
