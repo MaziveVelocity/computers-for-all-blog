@@ -1,8 +1,8 @@
 <div class="comments">
     {{#each this}}
-    <div class="card">
-        <p class="card-body">{{comment_text}}</p>
-        <div class="card-footer">
+    <div class="card-con">
+        <p class="body">{{comment_text}}</p>
+        <div class="footer">
             {{user.username}} on {{format_date created_at}}
             {{#if isLoggedIn}}
             <div>
